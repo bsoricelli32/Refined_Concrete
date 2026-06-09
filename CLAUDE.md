@@ -2,10 +2,9 @@
 
 ## Project Context
 
-Greenfield marketing site for **Refined Concrete**, a small concrete construction company in Moundridge, Kansas. Owner: Jorde Wiggers. First website — no prior codebase.
+Greenfield marketing site for **Refined Concrete**, a small concrete construction company in Moundridge, Kansas. First website, no prior codebase.
 
-**Launch deadline:** End of July 2026
-**Budget:** $1,000–$2,000
+**Launch target:** End of July 2026
 
 ---
 
@@ -78,12 +77,10 @@ Use placeholder content and `[CLIENT TO PROVIDE]` markers anywhere real assets a
 
 ---
 
-## Client Communication Notes
+## Working Notes
 
-- Jorde responds within 24 hours
-- Reviews at key milestones only (not every commit)
-- Open to scope adjustments within budget
-- Maintenance plan: TBD post-launch — don't build anything that requires ongoing paid services without flagging it
+- Review at key milestones, not every commit
+- Maintenance plan is TBD post-launch; don't build anything that requires ongoing paid services without flagging it first
 
 ---
 
