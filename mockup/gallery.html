@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Work | Concrete Gallery | Refined Concrete</title>
+  <meta name="description" content="Recent concrete work from Refined Concrete: flatwork, retaining walls, and commercial pours across central Kansas." />
+  <link rel="canonical" href="https://refinedconcrete.com/gallery.html" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="../assets/images/favicon.png" />
+  <link rel="apple-touch-icon" href="../assets/images/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Refined Concrete" />
+  <meta property="og:title" content="Recent Work We're Proud to Stand On" />
+  <meta property="og:description" content="Flatwork, walls, and commercial pours from across central Kansas." />
+  <meta property="og:url" content="https://refinedconcrete.com/gallery.html" />
+  <meta property="og:image" content="https://refinedconcrete.com/assets/images/gallery-1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://refinedconcrete.com/assets/images/gallery-1.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  <style>
+    #gallery { background: var(--bg-2); }
+
+    .gallery-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .filter-btn {
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--gray);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 9px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .filter-btn:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
+    .filter-btn.active { color: var(--white); background: var(--blue-light); border-color: var(--blue-light); }
+    .filter-btn:focus-visible { outline: 2px solid var(--blue-bright); outline-offset: 3px; }
+
+    .gallery-grid { columns: 3; column-gap: 16px; }
+
+    .gallery-figure {
+      position: relative;
+      break-inside: avoid;
+      margin: 0 0 16px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      cursor: pointer;
+      border: 1px solid var(--border);
+    }
+    .gallery-figure img { width: 100%; display: block; transition: transform 0.6s cubic-bezier(0.2,0.7,0.2,1); }
+    .gallery-figure::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(6,6,6,0.7) 0%, transparent 45%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .gallery-figure figcaption {
+      position: absolute;
+      left: 18px;
+      bottom: 14px;
+      z-index: 1;
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .gallery-figure figcaption span { display: block; font-size: 0.72rem; font-weight: 500; color: var(--blue-bright); letter-spacing: 0.08em; text-transform: uppercase; }
+    .gallery-figure:hover img { transform: scale(1.06); }
+    .gallery-figure:hover::after { opacity: 1; }
+    .gallery-figure:hover figcaption { opacity: 1; transform: translateY(0); }
+    .gallery-figure.is-hidden { display: none; }
+
+    .gallery-note { margin-top: 40px; font-size: 0.9rem; color: var(--gray); }
+    .gallery-note .placeholder { color: var(--blue-bright); font-weight: 600; }
+
+    /* ── BEFORE / AFTER ── */
+    #beforeafter { background: var(--bg-3); }
+    .ba-head { max-width: 620px; margin-bottom: 40px; }
+    .ba {
+      --pos: 50%;
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      touch-action: none;
+    }
+    .ba-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ba-before { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+    .ba-divider { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; background: var(--white); transform: translateX(-1px); pointer-events: none; }
+    .ba-divider::after {
+      content: '';
+      position: absolute; top: 50%; left: 50%;
+      width: 40px; height: 40px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: var(--blue-light);
+      border: 2px solid #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    .ba-tag {
+      position: absolute; top: 14px; z-index: 2;
+      font-family: 'Montserrat', sans-serif; font-size: 0.66rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: #fff;
+      background: rgba(6,6,6,0.7); padding: 5px 10px; border-radius: 3px;
+    }
+    .ba-tag-before { left: 14px; }
+    .ba-tag-after { right: 14px; }
+    .ba-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; }
+    .ba-range:focus-visible { outline: 2px solid var(--blue-bright); outline-offset: 3px; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(6,6,6,0.92);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .lightbox.open { opacity: 1; pointer-events: auto; }
+    .lightbox img {
+      max-width: min(92vw, 1200px);
+      max-height: 84vh;
+      border-radius: var(--radius);
+      box-shadow: 0 30px 80px -20px rgba(0,0,0,0.8);
+    }
+    .lb-btn {
+      position: absolute;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white);
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .lb-btn:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.4); }
+    .lb-btn:focus-visible { outline: 2px solid var(--blue-bright); outline-offset: 3px; }
+    .lb-btn svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .lb-close { top: 24px; right: 24px; }
+    .lb-prev { left: 24px; top: 50%; transform: translateY(-50%); }
+    .lb-next { right: 24px; top: 50%; transform: translateY(-50%); }
+    .lb-caption {
+      position: absolute;
+      bottom: 26px;
+      left: 0; right: 0;
+      text-align: center;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+    }
+    .lb-caption span { color: var(--blue-bright); }
+
+    @media (max-width: 1024px) { .gallery-grid { columns: 2; } }
+    @media (max-width: 600px) {
+      .gallery-grid { columns: 1; }
+      .lb-prev { left: 12px; }
+      .lb-next { right: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .gallery-figure img, .gallery-figure::after, .gallery-figure figcaption, .lightbox { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html"><img src="../assets/images/logo-white.png" alt="Refined Concrete" /></a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-right" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="nav-divider"></div>
+        <a href="tel:6208605915" class="nav-phone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(620) 860-5915</a>
+        <a href="quote.html" class="nav-cta">Get a Quote</a>
+      </div>
+    </div>
+    <div class="nav-backdrop"></div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('../assets/images/hero-8.jpg')"></div>
+    <div class="page-hero-inner">
+      <h1>Recent Work We're Proud to Stand On</h1>
+      <p>Flatwork, walls, and commercial pours from across central Kansas.</p>
+    </div>
+  </header>
+
+  <!-- BEFORE / AFTER -->
+  <section class="section" id="beforeafter">
+    <div class="section-inner">
+      <div class="ba-head reveal">
+        <h2 class="section-title">See the Difference</h2>
+        <p class="section-sub">Drag the slider to compare a site before and after we pour. <span class="placeholder" style="color:var(--blue-bright);font-weight:600;">[CLIENT TO PROVIDE]</span> a real before/after pair.</p>
+      </div>
+      <div class="ba" id="ba">
+        <img class="ba-img ba-after" src="../assets/images/gallery-2.jpg" alt="Finished concrete work" loading="lazy" decoding="async" />
+        <div class="ba-before">
+          <img class="ba-img" src="../assets/images/gallery-7.jpg" alt="Concrete site before the work" loading="lazy" decoding="async" />
+        </div>
+        <span class="ba-tag ba-tag-before">Before</span>
+        <span class="ba-tag ba-tag-after">After</span>
+        <div class="ba-divider"></div>
+        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Reveal before and after" />
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="section-inner">
+      <div class="gallery-grid">
+        <figure class="gallery-figure" data-category="flatwork" data-caption="Residential driveway pour" data-tag="Flatwork">
+          <img loading="lazy" decoding="async" src="../assets/images/gallery-1.jpg" alt="Residential driveway concrete pour" />
+          <figcaption><span>Flatwork</span>Residential driveway pour</figcaption>
+        </figure>
+        <figure class="gallery-figure" data-category="commercial" data-caption="Placement & finishing crew at work" data-tag="Commercial">
+          <img loading="lazy" decoding="async" src="../assets/images/gallery-2.jpg" alt="Concrete placement and finishing crew" />
+          <figcaption><span>Commercial</span>Placement &amp; finishing</figcaption>
+        </figure>
+        <figure class="gallery-figure" data-category="walls" data-caption="Poured-in-place retaining wall" data-tag="Retaining Walls">
+          <img loading="lazy" decoding="async" src="../assets/images/gallery-3.jpg" alt="Concrete retaining wall" />
+          <figcaption><span>Retaining Walls</span>Poured-in-place wall</figcaption>
+        </figure>
+        <figure class="gallery-figure" data-category="flatwork" data-caption="Early-entry sawcut control joints" data-tag="Flatwork">
+          <img loading="lazy" decoding="async" src="../assets/images/gallery-4.jpg" alt="Early entry sawcutting on a slab" />
+          <figcaption><span>Flatwork</span>Sawcut control joints</figcaption>
+        </figure>
+        <figure class="gallery-figure" data-category="decorative" data-caption="Exposed aggregate finish" data-tag="Decorative">
+          <img loading="lazy" decoding="async" src="../assets/images/gallery-5.jpg" alt="Decorative exposed aggregate concrete" />
+          <figcaption><span>Decorative</span>Exposed aggregate finish</figcaption>
+        </figure>
+        <figure class="gallery-figure" data-category="commercial" data-caption="Large commercial slab" data-tag="Commercial">
+          <img loading="lazy" decoding="async" src="../assets/images/gallery-6.jpg" alt="Large commercial concrete slab" />
+          <figcaption><span>Commercial</span>Large commercial slab</figcaption>
+        </figure>
+        <figure class="gallery-figure" data-category="decorative" data-caption="Finished patio detail" data-tag="Decorative">
+          <img loading="lazy" decoding="async" src="../assets/images/gallery-7.jpg" alt="Finished decorative concrete patio" />
+          <figcaption><span>Decorative</span>Finished patio detail</figcaption>
+        </figure>
+        <figure class="gallery-figure" data-category="commercial" data-caption="Foundation and forming" data-tag="Commercial">
+          <img loading="lazy" decoding="async" src="../assets/images/hero-1.jpg" alt="Concrete foundation and forming" />
+          <figcaption><span>Commercial</span>Foundation &amp; forming</figcaption>
+        </figure>
+        <figure class="gallery-figure" data-category="flatwork" data-caption="Fresh flatwork at sunset" data-tag="Flatwork">
+          <img loading="lazy" decoding="async" src="../assets/images/hero-2.jpg" alt="Fresh concrete flatwork" />
+          <figcaption><span>Flatwork</span>Fresh flatwork</figcaption>
+        </figure>
+        <figure class="gallery-figure" data-category="commercial" data-caption="Laser screed floor pour" data-tag="Commercial">
+          <img loading="lazy" decoding="async" src="../assets/images/hero-6.jpg" alt="Laser screed concrete floor" />
+          <figcaption><span>Commercial</span>Laser screed floor</figcaption>
+        </figure>
+        <figure class="gallery-figure" data-category="walls" data-caption="Site grade change wall" data-tag="Retaining Walls">
+          <img loading="lazy" decoding="async" src="../assets/images/hero-7.jpg" alt="Concrete site grade change" />
+          <figcaption><span>Retaining Walls</span>Site grade change</figcaption>
+        </figure>
+        <figure class="gallery-figure" data-category="flatwork" data-caption="Shop floor slab" data-tag="Flatwork">
+          <img loading="lazy" decoding="async" src="../assets/images/hero-9.jpg" alt="Concrete shop floor slab" />
+          <figcaption><span>Flatwork</span>Shop floor slab</figcaption>
+        </figure>
+      </div>
+
+      <p class="gallery-note"><span class="placeholder">[CLIENT TO PROVIDE]</span> final project photos with real captions (location and project type). These are stand-ins for now.</p>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <div class="cta-strip-inner">
+      <h2>Want Work Like This on Your Site?</h2>
+      <p>Tell us what you are pouring. We get back to you within a day.</p>
+      <div class="cta-actions">
+        <a href="quote.html" class="btn-primary">Get a Free Quote</a>
+        <a href="tel:6208605915" class="btn-outline-white">Call (620) 860-5915</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project image viewer">
+    <button class="lb-btn lb-close" type="button" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button class="lb-btn lb-next" type="button" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <img loading="lazy" decoding="async" id="lb-img" src="" alt="" />
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta" aria-label="Quick contact">
+    <a href="tel:6208605915" class="mc-call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+    <a href="quote.html" class="mc-quote">Get a Quote</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="footer-logo" href="index.html"><img src="../assets/images/logo-white.png" alt="Refined Concrete" /></a>
+          <p>Flatwork-focused concrete, poured right. Family-started in 2012, serving central Kansas from Moundridge.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61590674871398" target="_blank" rel="noopener" aria-label="Refined Concrete on Facebook"><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
+            <a href="https://www.instagram.com/refined_concrete_llc/" target="_blank" rel="noopener" aria-label="Refined Concrete on Instagram"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Who We Are</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="quote.html">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:6208605915">(620) 860-5915</a></li>
+            <li><a href="mailto:jorde@refinedconcrete.com">jorde@refinedconcrete.com</a></li>
+            <li><a href="#">Moundridge, Kansas</a></li>
+            <li>Mon-Fri, 7am to 5pm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Refined Concrete. All rights reserved.</span>
+        <span>Moundridge, Kansas</span>
+        <span>Licensed &amp; Insured &middot; KS Lic. [CLIENT TO PROVIDE]</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/site.js"></script>
+  <script>
+    (function () {
+      var ba = document.getElementById('ba');
+      if (ba) {
+        var range = ba.querySelector('.ba-range');
+        var set = function () { ba.style.setProperty('--pos', range.value + '%'); };
+        range.addEventListener('input', set);
+        set();
+      }
+    })();
+    (function () {
+      var figures = [].slice.call(document.querySelectorAll('.gallery-figure'));
+
+      // Lightbox
+      var lb = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lb-img');
+      var lbCap = document.getElementById('lb-caption');
+      var current = 0;
+      var lastFocus = null;
+
+      function visible() { return figures; }
+
+      function show(i) {
+        var list = visible();
+        if (!list.length) return;
+        current = (i + list.length) % list.length;
+        var fig = list[current];
+        var img = fig.querySelector('img');
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCap.innerHTML = '<span>' + fig.dataset.tag + '</span> &nbsp;·&nbsp; ' + fig.dataset.caption;
+      }
+
+      function open(fig) {
+        lastFocus = document.activeElement;
+        current = visible().indexOf(fig);
+        show(current);
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        lb.querySelector('.lb-close').focus();
+      }
+      function close() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+        if (lastFocus) lastFocus.focus();
+      }
+
+      figures.forEach(function (fig) {
+        fig.setAttribute('tabindex', '0');
+        fig.setAttribute('role', 'button');
+        fig.addEventListener('click', function () { open(fig); });
+        fig.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(fig); }
+        });
+      });
+
+      lb.querySelector('.lb-close').addEventListener('click', close);
+      lb.querySelector('.lb-prev').addEventListener('click', function () { show(current - 1); });
+      lb.querySelector('.lb-next').addEventListener('click', function () { show(current + 1); });
+      lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') show(current - 1);
+        else if (e.key === 'ArrowRight') show(current + 1);
+      });
+    })();
+  </script>
+
+</body>
+</html>

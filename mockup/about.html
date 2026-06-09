@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | The Refined Concrete Story | Moundridge, KS</title>
+  <meta name="description" content="The story of Refined Concrete: founded in 2012 by Grant Koehn, now run by Grant and Jorde Wiggers, pouring quality flatwork across central Kansas." />
+  <link rel="canonical" href="https://refinedconcrete.com/about.html" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="../assets/images/favicon.png" />
+  <link rel="apple-touch-icon" href="../assets/images/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Refined Concrete" />
+  <meta property="og:title" content="The Refined Concrete Story" />
+  <meta property="og:description" content="Founded in 2012, family-run, pouring quality flatwork across central Kansas." />
+  <meta property="og:url" content="https://refinedconcrete.com/about.html" />
+  <meta property="og:image" content="https://refinedconcrete.com/assets/images/hero-4.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://refinedconcrete.com/assets/images/hero-4.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  <style>
+    /* ── INTRO ── */
+    #intro { background: var(--bg-2); }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .intro-text p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .intro-text p:last-child { margin-bottom: 0; }
+    .intro-text .placeholder { color: var(--blue-bright); font-weight: 600; }
+    .intro-img {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      border-radius: var(--radius);
+    }
+    .intro-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .intro-badge {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      background: rgba(8,8,8,0.78);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      padding: 18px 22px;
+      border-radius: var(--radius);
+    }
+    .intro-badge strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--white);
+      line-height: 1;
+    }
+    .intro-badge span { font-size: 0.8rem; color: var(--gray); letter-spacing: 0.04em; }
+
+    /* ── INTRO STATS ── */
+    .intro-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 36px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--blue-bright);
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .intro-stat-label {
+      margin-top: 8px;
+      font-size: 0.78rem;
+      color: var(--gray);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── VALUES ── */
+    #values { background: var(--bg-2); }
+    .values-head { max-width: 620px; margin-bottom: 56px; }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .value-item {
+      position: relative;
+      background: var(--bg-4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px 34px;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.2,0.7,0.2,1), border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+    .value-item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(125,184,232,0.5);
+      box-shadow: 0 24px 60px -22px rgba(26,60,110,0.85);
+    }
+    .value-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .value-item p { font-size: 0.97rem; color: var(--gray); line-height: 1.75; }
+
+    /* ── SERVICE AREA ── */
+    #area { background: var(--bg-2); }
+    .area-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .area-text p { color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8; margin-bottom: 22px; }
+    .area-towns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 28px; max-width: 420px; }
+    .area-towns span {
+      position: relative;
+      padding-left: 20px;
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+    .area-towns span::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0.55em;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--blue-bright);
+    }
+    .area-img { aspect-ratio: 5/4; overflow: hidden; border-radius: var(--radius); }
+    .area-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ── TEAM ── */
+    #team { background: var(--bg-1); }
+    .team-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .team-text p { color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8; margin-bottom: 18px; }
+    .team-text .placeholder { color: var(--blue-bright); font-weight: 600; }
+    .team-img { aspect-ratio: 4/3; overflow: hidden; border-radius: var(--radius); }
+    .team-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    @media (max-width: 1024px) {
+      .intro-grid, .area-grid, .team-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .intro-img { aspect-ratio: 16/10; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html"><img src="../assets/images/logo-white.png" alt="Refined Concrete" /></a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-right" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+        </ul>
+        <div class="nav-divider"></div>
+        <a href="tel:6208605915" class="nav-phone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(620) 860-5915</a>
+        <a href="quote.html" class="nav-cta">Get a Quote</a>
+      </div>
+    </div>
+    <div class="nav-backdrop"></div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('../assets/images/hero-4.jpg')"></div>
+    <div class="page-hero-inner">
+      <h1>The Refined Concrete Story</h1>
+      <p>Grant Koehn started this company in 2012. Today he and Jorde Wiggers pour flatwork across central Kansas.</p>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="section" id="intro">
+    <div class="section-inner">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <h2 class="section-title">How Refined Concrete Started</h2>
+          <p>Refined Concrete (originally Refined Coatings) was established in August 2012 by Grant Koehn and his brother, Brycen Koehn. Both Grant and Brycen learned the value of hard work and attention to detail while working at a local wood working shop with their Dad. Grant spent a couple of years in his teens working for a local concrete crew that specialized mostly in residential basements and flatwork.</p>
+          <p>The decision was made in early 2012 to start their own business specializing in concrete polishing and epoxy flooring. Roughly 2-3 years later, the company began pouring concrete while still primarily focusing on flooring. Sometime around 2019, Grant shifted his focus toward concrete placement, and by 2020, a dedicated crew was in place specifically for concrete work. From there, the concrete division continued to grow.</p>
+          <p>In 2024, Brycen chose to step away, and the coatings division was sold. As a result, Refined Coatings transitioned away from flooring and became Refined Concrete.</p>
+          <p>At the beginning of 2026, Grant partnered with Jorde Wiggers, who had been working with the company since early 2020. Grant's experience in the flooring industry reinforces the importance of quality flatwork, and our young, energetic team's passion for quality concrete flatwork and commitment to meeting the challenges of the trade have never been stronger. We look forward to providing you or your customers with the highest quality flatwork possible.</p>
+          <div class="intro-stats">
+            <div class="intro-stat">
+              <div class="stat-num"><span data-target="1181" data-comma="1">0</span></div>
+              <div class="intro-stat-label">Projects Completed</div>
+            </div>
+            <div class="intro-stat">
+              <div class="stat-num"><span data-target="2012">0</span></div>
+              <div class="intro-stat-label">In Business Since</div>
+            </div>
+          </div>
+        </div>
+        <div class="intro-img">
+          <img loading="lazy" decoding="async" src="../assets/images/about-team.jpg" alt="Refined Concrete crew on a job site" />
+          <div class="intro-badge">
+            <strong>Moundridge, KS</strong>
+            <span>Serving all of central Kansas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section" id="values">
+    <div class="section-inner">
+      <div class="values-head reveal">
+        <h2 class="section-title">The Standards Behind Every Slab</h2>
+        <p class="section-sub">Three things we bring to every job, from the quote to the cure.</p>
+      </div>
+      <div class="values-grid">
+        <article class="value-item reveal">
+          <h3>An Eye for Detail</h3>
+          <p>We learned to sweat the details in a woodworking shop. We bring that same eye to grade, screed, and finish on every slab we pour.</p>
+        </article>
+        <article class="value-item reveal">
+          <h3>Flatwork Is the Focus</h3>
+          <p>We pour flatwork day in and day out. Driveways, shop floors, parking lots, patios. The repetition is why your slab comes out flat and clean.</p>
+        </article>
+        <article class="value-item reveal">
+          <h3>We Do What We Say</h3>
+          <p>We show up when we said we would, with the crew and the gear the job needs. Then we pour it right the first time.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section class="section" id="area">
+    <div class="section-inner">
+      <div class="area-grid">
+        <div class="area-text reveal">
+          <h2 class="section-title">Central Kansas Is Home Turf</h2>
+          <p>We work out of Moundridge and pour across central Kansas. Residential, commercial, agricultural. Not sure you are in range? Call and we will tell you straight.</p>
+          <div class="area-towns">
+            <span>Moundridge</span><span>McPherson</span><span>Hutchinson</span><span>Newton</span>
+            <span>Hesston</span><span>Wichita</span><span>Salina</span><span>Lindsborg</span>
+            <span>Buhler</span><span>Halstead</span>
+          </div>
+        </div>
+        <div class="area-img reveal">
+          <img loading="lazy" decoding="async" src="../assets/images/hero-7.jpg" alt="Concrete work in central Kansas" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section" id="team">
+    <div class="section-inner">
+      <div class="team-wrap">
+        <div class="team-img reveal">
+          <img loading="lazy" decoding="async" src="../assets/images/hero-2.jpg" alt="The Refined Concrete team" />
+        </div>
+        <div class="team-text reveal">
+          <h2 class="section-title">The People Behind the Pour</h2>
+          <p>Grant Koehn started Refined Concrete and still runs the crew. Jorde Wiggers joined in 2020 and became a partner in 2026. The rest of the team is young, and proud of clean flatwork.</p>
+          <p><span class="placeholder">[CLIENT TO PROVIDE]</span> names, roles, and photos of the key crew you want to feature.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <div class="cta-strip-inner">
+      <h2>Let's Talk About Your Project</h2>
+      <p>Tell us what you are pouring. We get back to you within a day.</p>
+      <div class="cta-actions">
+        <a href="quote.html" class="btn-primary">Get a Free Quote</a>
+        <a href="tel:6208605915" class="btn-outline-white">Call (620) 860-5915</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta" aria-label="Quick contact">
+    <a href="tel:6208605915" class="mc-call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+    <a href="quote.html" class="mc-quote">Get a Quote</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="footer-logo" href="index.html"><img src="../assets/images/logo-white.png" alt="Refined Concrete" /></a>
+          <p>Flatwork-focused concrete, poured right. Family-started in 2012, serving central Kansas from Moundridge.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61590674871398" target="_blank" rel="noopener" aria-label="Refined Concrete on Facebook"><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
+            <a href="https://www.instagram.com/refined_concrete_llc/" target="_blank" rel="noopener" aria-label="Refined Concrete on Instagram"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Who We Are</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="quote.html">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:6208605915">(620) 860-5915</a></li>
+            <li><a href="mailto:jorde@refinedconcrete.com">jorde@refinedconcrete.com</a></li>
+            <li><a href="#">Moundridge, Kansas</a></li>
+            <li>Mon-Fri, 7am to 5pm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Refined Concrete. All rights reserved.</span>
+        <span>Moundridge, Kansas</span>
+        <span>Licensed &amp; Insured &middot; KS Lic. [CLIENT TO PROVIDE]</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/site.js"></script>
+  <script>
+    (function () {
+      var nums = [].slice.call(document.querySelectorAll('.stat-num span[data-target]'));
+      var fmt = function (n, el) { return (el.dataset.comma ? n.toLocaleString('en-US') : String(n)) + (el.dataset.suffix || ''); };
+      if (!nums.length || !('IntersectionObserver' in window)) {
+        nums.forEach(function (n) { n.textContent = fmt(+n.dataset.target, n); });
+        return;
+      }
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var el = e.target, target = +el.dataset.target, start = null;
+          var dur = 1400;
+          function step(ts) {
+            if (!start) start = ts;
+            var p = Math.min((ts - start) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = fmt(Math.round(eased * target), el);
+            if (p < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+          obs.unobserve(el);
+        });
+      }, { threshold: 0.5 });
+      nums.forEach(function (n) { obs.observe(n); });
+    })();
+  </script>
+
+</body>
+</html>
