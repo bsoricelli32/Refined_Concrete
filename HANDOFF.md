@@ -28,7 +28,7 @@ Launched and live as of: **TODO `YYYY-MM-DD`**.
 
 **Live site URL**
 
-- Production: **TODO** (intended domain `https://refinedconcrete.com` — confirm DNS is pointed at Vercel).
+- Production: **TODO** (intended domain `https://refinedconcretellc.com` — confirm DNS is pointed at Vercel).
 
 **Preview links**
 
@@ -228,4 +228,4 @@ Formspree login email: **TODO**.
 - [ ] Create the Formspree form and replace `REPLACE_ME`; set the notification email (Section 6).
 - [ ] Replace placeholder content marked `[CLIENT TO PROVIDE]`: real reviews (homepage), the before/after photo pair (gallery), license number and business hours (footer), team member names/photos (About).
 - [ ] Confirm final stat numbers (employee/crew count; projects = 1,181 as of 2026-03-24).
-- [ ] Update the canonical / Open Graph / sitemap URLs if the final domain differs from `refinedconcrete.com`.
+- [ ] Update the canonical / Open Graph / sitemap URLs if the final domain differs from `refinedconcretellc.com`.

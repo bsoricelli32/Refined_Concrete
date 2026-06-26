@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://refinedconcrete.com/sitemap.xml
+Sitemap: https://refinedconcretellc.com/sitemap.xml
