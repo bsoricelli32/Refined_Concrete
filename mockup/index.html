@@ -1070,7 +1070,7 @@
           <span class="service-card-arrow">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </span>
       </a>
-      <a class="service-card wide" href="services.html#flatwork">
+      <a class="service-card" href="services.html#flatwork">
         <span class="service-card-bg" style="background-image:url('../assets/images/gallery-1.jpg')"></span>
         <span class="service-card-body">
           <h3>Flatwork</h3>
@@ -1094,19 +1094,11 @@
           <span class="service-card-arrow">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </span>
       </a>
-      <a class="service-card wide" href="services.html#laser-screeding">
+      <a class="service-card" href="services.html#laser-screeding">
         <span class="service-card-bg" style="background-image:url('../assets/images/gallery-6.jpg')"></span>
         <span class="service-card-body">
           <h3>Laser Screeding</h3>
           <span class="service-card-desc">Laser-guided screed equipment delivering high-tolerance FF/FL floors for warehouse and industrial pours at large-volume scale.</span>
-          <span class="service-card-arrow">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </span>
-      </a>
-      <a class="service-card wide" href="services.html#agricultural-construction">
-        <span class="service-card-bg" style="background-image:url('../assets/images/hero-2.jpg')"></span>
-        <span class="service-card-body">
-          <h3>Agricultural Construction</h3>
-          <span class="service-card-desc">Slabs, floors, and foundations for barns, shops, grain facilities, and equipment buildings out on the farm.</span>
           <span class="service-card-arrow">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </span>
       </a>
@@ -1263,7 +1255,7 @@
     siteNav.querySelectorAll('.nav-right a').forEach(a => a.addEventListener('click', () => setMenu(false)));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 
-    const services = ['Flatwork', 'Retaining Walls', 'Agricultural Construction', 'Laser Screeding', 'Place & Finish'];
+    const services = ['Flatwork', 'Retaining Walls', 'Laser Screeding', 'Place & Finish'];
     const rotEl = document.getElementById('rotating-service');
     let svcIdx = 0;
     let charIdx = services[0].length;
