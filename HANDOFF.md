@@ -119,17 +119,16 @@ Key image groups: `hero-1..9.jpg` (homepage hero slideshow + page banners), `gal
 
 **Contact / quote form**
 
-- File: `mockup/quote.html` (the `<form class="contact-form">`).
-- Service: **Formspree** (placeholder). The form `action` is currently `https://formspree.io/f/REPLACE_ME` and must be replaced with a real Formspree form ID before launch. The form is already Formspree-ready (spam honeypot + email subject line included).
-- Notifications go to: **TODO** (the email registered on the Formspree form).
-
-**To make it live**
-1. Create a (free) form at formspree.io using the destination email.
-2. Replace `REPLACE_ME` in `mockup/quote.html` with the new form ID.
-3. Submit a test on the preview, confirm the email arrives, then merge to `main`.
+- File: `mockup/quote.html` (the `<form id="quote-form">`).
+- Service: **Formspree**, endpoint `https://formspree.io/f/xaqrjyjr` (live).
+- Submission method: **AJAX** (`fetch`) via the small inline script at the bottom of `quote.html`. The visitor stays on the page; on success the form is replaced with a "Thanks, we got it." confirmation. On failure an inline error appears telling them to call or email instead. If JavaScript is off, the form still works as a normal POST (Formspree shows its own thank-you page).
+- Spam protection: a hidden `_gotcha` honeypot field.
+- Notification subject: set by the hidden `_subject` field.
+- Notifications go to: the email registered on the Formspree form (**TODO: confirm which inbox**).
 
 **To update labels or messages**
 - Edit the `<label>` text in `mockup/quote.html`, commit, check the preview.
+- The confirmation wording lives in the inline script (`form-sent` block) at the bottom of the same file.
 
 Formspree login email: **TODO**.
 
