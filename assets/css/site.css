@@ -448,6 +448,16 @@ img { max-width: 100%; }
   flex-wrap: wrap;
 }
 
+.footer-credit {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+}
+.footer-credit:hover,
+.footer-credit:focus-visible {
+  color: rgba(255,255,255,0.8);
+  text-decoration: underline;
+}
+
 /* ── SCROLL REVEAL ─────────────────────────────────────── */
 .reveal {
   opacity: 0;
